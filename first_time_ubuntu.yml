@@ -8,7 +8,7 @@
         append: True
         comment: 'Celebrian - Per-Kristian'
         groups: admin,sudo
-        uid: 75321
+        uid: "{{ celebrian_uid }}"
         update_password: on_create
 
     - name: Add authorized keys
