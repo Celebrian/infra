@@ -1,0 +1,3 @@
+# Ignore galaxy roles, vault password and vault.yaml
+galaxy_roles
+vault.yaml

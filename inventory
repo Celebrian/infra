@@ -1,0 +1,11 @@
+[bastion]
+10.0.0.61
+
+# [storagepi]
+
+# [cluster]
+
+[home:children]
+bastion
+#storagepi
+#cluster

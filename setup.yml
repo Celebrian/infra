@@ -1,0 +1,10 @@
+---
+- name: Setup infrastructure
+  hosts: bastion
+  vars_files: secrets/variables.yml
+  tasks:
+    - name: Install roles
+      include_role:
+        - name: gerlingguy.docker
+        - name: gerlingguy.dotfiles
+        - name: geerlingguy.security
