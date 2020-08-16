@@ -1,6 +1,7 @@
 ---
 - name: First time ubuntu setup
   hosts: all
+  become: True
   tasks:
     - name: Create main user
       user:
