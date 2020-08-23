@@ -1,6 +1,6 @@
 ---
 - name: Setup infrastructure
-  hosts: bastion
+  hosts: all 
   vars_files: secrets/variables.yml
   tasks:
     - name: Install roles
@@ -8,3 +8,25 @@
         - name: gerlingguy.docker
         - name: gerlingguy.dotfiles
         - name: geerlingguy.security
+        - name: sshd_hardening
+
+    - name: Remove MOTD spam on ubuntu machines
+    become: True
+      file:
+        path: "/etc/update-motd.d/{{ item }}"
+        state: absent
+      loop:
+        - 10-help-text
+        - 50-landscape-sysinfo
+        - 50-motd-news
+        - 85-fwupd
+        - 95-hwe-eol
+      when: ansible_distribution == 'Ubuntu'
+
+- name: Setup bastion spesific config
+  hosts: bastion
+  tasks:
+    - name: Install bastion packages
+      apt:
+        name: "{{ installed_packages }}"
+        state: present
