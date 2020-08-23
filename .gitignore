@@ -1,3 +1,5 @@
-# Ignore galaxy roles, vault password and vault.yaml
+# Ignore roles folders
+roles
 galaxy_roles
-vault.yaml
+# Ignore vim temp files
+*.swp
