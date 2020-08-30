@@ -6,6 +6,7 @@
     - name: Create main user
       user:
         name: celebrian
+        shell: /bin/bash
         append: True
         comment: 'Celebrian - Per-Kristian'
         groups: admin,sudo
