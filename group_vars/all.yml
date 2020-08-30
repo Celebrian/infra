@@ -1,16 +1,19 @@
 ---
+celebrian_user: celebrian
 celebrian_uid: 75321
 
 # grog.package
 package_list:
+  - name: ansible
   - name: bash-completion
   - name: curl
   - name: git
   - name: git-crypt
   - name: net-tools
   - name: openssh-server
-  - name: python
+  - name: python3
   - name: screen
+  - name: sshpass
   - name: sudo
   - name: tmux
   - name: tree
@@ -18,7 +21,7 @@ package_list:
   - name: wget
 
 # For geerlingguy.dotfiles:
-dotfiles_repo: "https://github.com/celebrian/dotfiles.git"
+dotfiles_repo: "https://github.com/celebrian/dot.git"
 dotfiles_repo_local_destination: "~/dot"
 dotfiles_home: "~"
 dotfiles_files:
