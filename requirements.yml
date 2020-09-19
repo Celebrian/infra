@@ -1,4 +1,2 @@
-- src: geerlingguy.dotfiles
-- src: geerlingguy.security
 - src: geerlingguy.ntp
 - src: grog.package
