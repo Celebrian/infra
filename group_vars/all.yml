@@ -1,6 +1,7 @@
 ---
-celebrian_user: celebrian
-celebrian_uid: 75321
+main_user: celebrian
+main_comment: 'Celebrian - Per-Kristian'
+main_uid: 75321
 
 # grog.package
 package_list:
