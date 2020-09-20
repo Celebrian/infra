@@ -5,16 +5,16 @@
   tasks:
     - name: Create main user
       user:
-        name: {{ main_user }}
+        name: "{{ main_user }}"
         shell: /bin/bash
         append: True
-        comment: {{ main_comment }}
+        comment: "{{ main_comment }}"
         groups: admin,sudo
         uid: "{{ main_uid }}"
         update_password: on_create
 
     - name: Add authorized keys
       authorized_key:
-        user: {{ main_user }}
+        user: "{{ main_user }}"
         state: present
         key: https://github.com/celebrian.keys

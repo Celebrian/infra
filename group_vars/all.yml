@@ -37,5 +37,5 @@ dotfiles_files:
 # For geerlingguy.ntp
 ntp_timezone: Europe/Oslo
 
-# For geerlingguy.security
-security_autoupdate_enabled: false
+# hardening
+hardening_allow_users: {{ main_user }}

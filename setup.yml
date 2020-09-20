@@ -1,13 +1,13 @@
 ---
 - name: Setup infrastructure
-  hosts: all 
+  hosts: all
   gather_facts: True
   vars_files: secrets/variables.yml
   tasks:
     - name: Install default packages
       include_role:
         name: grog.package
-      vars: 
+      vars:
         - ansible_become: True
 
     - name: Install dotfiles
@@ -17,13 +17,13 @@
     - name: Basic SSH hardening
       include_role:
         name: geerlingguy.security
-      vars: 
+      vars:
         - ansible_become: True
 
     - name: Advanced SSH hardening
       include_role:
         name: ssh_hardening
-      vars: 
+      vars:
         - ansible_become: True
 
     - name: Remove MOTD spam on ubuntu machines
