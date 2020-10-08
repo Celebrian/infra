@@ -21,21 +21,14 @@ package_list:
   - name: vim
   - name: wget
 
-# For geerlingguy.dotfiles:
-dotfiles_repo: "https://github.com/celebrian/dot.git"
-dotfiles_repo_local_destination: "~/dot"
-dotfiles_home: "~"
-dotfiles_files:
-  - .ansible.cfg
-  - .bash_aliases
-  - .bash_exports
-  - .bashrc
-  - .gitconfig
-  - .profile
-  - .vimrc
-
-# For geerlingguy.ntp
+# geerlingguy.ntp
 ntp_timezone: Europe/Oslo
 
+# docker_install
+docker_user: "{{ main_user }}"
+
 # hardening
-hardening_allow_users: {{ main_user }}
+hardening_allow_users: "{{ main_user }}"
+
+# ssh_port_change
+ssh_port_change_dir: /etc/ssh/sshd_config.d/hardened.conf
