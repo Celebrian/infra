@@ -1,2 +1,0 @@
-[bastion]
-bast ansible_host=10.0.0.61
