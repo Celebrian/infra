@@ -1,3 +1,5 @@
+# Ignore inventory file
+inventory
 # Ignore roles folders
 roles
 galaxy_roles
