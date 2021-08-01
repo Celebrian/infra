@@ -1,0 +1,24 @@
+---
+- name: Update all packages and restart if nessesary
+  hosts: all
+  tasks:
+  - name: Update all packages to their latest version
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Check if restart is required
+    ansible.builtin.stat:
+      path: /var/run/reboot-required
+    register: require_reboot
+
+  - name: Reboot if required
+    ansible.builtin.reboot:
+    when: require_reboot.stat.exists
+
+  - name: Remove useless packages from cache and remove old dependencies
+    yum:
+      autoclean: yes
+      autoremove: yes
